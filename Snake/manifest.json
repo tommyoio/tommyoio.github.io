@@ -1,0 +1,10 @@
+{
+    "name": "Hadík do vačku",
+    "short_name": "Hadík",
+    "theme_color": "#074a74",
+    "background_color": "#074a74",
+    "display": "fullScreen",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/index.html"
+  }

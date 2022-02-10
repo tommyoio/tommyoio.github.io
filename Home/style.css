@@ -1,0 +1,13 @@
+body{
+    padding: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #114664;
+    color: white;
+    border-radius: 10px;
+    border: #ececec 1px solid;
+    
+}
+
+a{
+    color: white;
+}
