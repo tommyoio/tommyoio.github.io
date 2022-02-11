@@ -73,6 +73,7 @@
         let foodCollected = false;
         let score = 0;
         let highscore = 0;
+        let hasMoved = false;
         
         let soundButtonPressed = new Audio ('sfx/blipSelect.mp3');
         let soundFruitEaten = new Audio ('sfx/pickupCoin.mp3');
@@ -113,6 +114,7 @@
         
         function gameLoop() {
             testGameOver();
+            hasMoved = false;
             
             if(foodCollected) {
                 snake = [{x: snake[0].x, y: snake[0].y}, ...snake]
@@ -169,6 +171,7 @@
         }
 
         function keyDown(e) {
+            if(hasMoved) return;
             if (e.keyCode == 37 && !(direction == "RIGHT")) {
                 direction = "LEFT";
             }
@@ -182,14 +185,17 @@
                  direction = "DOWN";
             }
             soundButtonPressed.play();
+            hasMoved = true;
         }
 
         function keyTap(e) {
+            if (hasMoved) return;
             if (e == 'RIGHT' && direction == 'LEFT') return;
             if (e == 'LEFT' && direction == 'RIGHT') return;
             if (e == 'UP' && direction == 'DOWN') return;
             if (e == 'DOWN' && direction == 'UP') return;
             direction = e;
+            hasMoved = true;
             soundButtonPressed.play();
         }
 
